@@ -1,0 +1,190 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.main-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 500px;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom right, #8be991, #97908d);
+    border-radius: 30px;
+}
+
+.weather-icon{
+    margin-top: 60px;
+}
+
+
+.search {
+    margin-top: 5px;
+    padding: 15px;
+}
+
+.search input {
+    position: absolute;
+    z-index: 2;
+    width: 200px;
+    height: 40px;
+    margin-left: -140;
+    border-radius: 20px;
+    padding: 10px;
+    border-style: none;
+    box-sizing: border-box;
+}
+
+
+
+.search button {
+    position: absolute;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin-left: 90px;
+    border-radius: 50%;
+    border-style: none;
+    box-sizing: border-box;
+}
+
+.icon {
+    position: relative;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+}
+
+.cerah-berawan #cloud img {
+    width: 300px;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, -50%);
+}
+
+.cerah-berawan #sun img {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(150%, -50%);
+}
+
+@keyframes moveElementsClouds {
+    0% {
+        transform: translate(50%, -50%) translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translate(0, 0);
+    }
+}
+
+@keyframes moveElementsSun {
+    0% {
+        transform: translate(150%, -50%) translate(0, 0);
+    }
+
+    50%{
+        transform: translate(-100%, -50%) translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-120%, -70%) translate(0, 0);
+    }
+}
+
+.cerah-berawan #cloud.active img {
+    animation: moveElementsClouds 4.5s forwards;
+}
+
+.cerah-berawan #sun.active img {
+    animation: moveElementsSun 8.5s forwards;
+}
+
+.mendung #awan-mendung img {
+    display: none;
+    width: 300px;
+    height: auto;
+}
+
+.cerah #sun-cerah img{
+    width: 100px;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -300%);
+    
+}
+
+@keyframes moveElementsClear {
+    0% {
+        transform: translate(-50%, -300%) translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-50%, -90%) translate(0, 0);
+    }
+}
+
+.cerah #sun-cerah.active img{
+    animation: moveElementsClear 8.5s forwards;
+}
+
+
+.name {
+    margin-top: -50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.temp {
+    font-size: 70px;
+}
+
+.city {
+    font-size: 30px;
+}
+
+.details {
+    margin-top: 40px;
+    height: 120px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.details img {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#humadity {
+    margin-left: -10px;
+}
+
+#wind-speed {
+    margin-left: -1px;
+}
